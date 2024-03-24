@@ -1,0 +1,42 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+git = "~/.config/git"
+
+[default.variables]
+email = "00.pavers_dither@icloud.com"
+
+[bash.files]
+bashrc = "~/.bashrc"
+
+[bat.files]
+bat = "~/.config/bat"
+".bat/themes" = "~/.config/bat/themes"
+
+[fuzzel.files]
+fuzzel = "~/.config/fuzzel"
+
+[helix.files]
+helix = "~/.config/helix"
+
+[niri.files]
+niri = "~/.config/niri"
+
+[nu.files]
+nushell = "~/.config/nushell"
+
+[arch.files]
+pacdef = "~/.config/pacdef"
+paru = "~/.config/paru"
+
+[wayland.files]
+swaylock = "~/.config/swaylock"
+waybar = "~/.config/waybar"
+".waybar/themes" = "~/.config/waybar"
+waypaper = "~/.config/waypaper"
+
+[wezterm.files]
+wezterm = "~/.config/wezterm"

@@ -1,0 +1,44 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "position", "file-encoding", "file-line-ending", "file-type"]
+
+[editor.lsp]
+display-messages = true
+auto-signature-help = false
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+H = "goto_first_nonwhitespace"
+L = "goto_line_end"
+C-h = ":toggle lsp.display-inlay-hints"
+
+[keys.normal.space]
+w = ":write"
+x = ":buffer-close"
+q = ":quit"
+l = ":format"
+
+[keys.select]
+H = "goto_first_nonwhitespace"
+L = "goto_line_end"

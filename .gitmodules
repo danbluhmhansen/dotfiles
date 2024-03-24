@@ -1,0 +1,6 @@
+[submodule ".bat"]
+	path = .bat
+	url = https://github.com/catppuccin/bat
+[submodule ".waybar"]
+	path = .waybar
+	url = https://github.com/catppuccin/waybar

@@ -1,0 +1,10 @@
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.nu-lsp]
+command = "nu"
+args = ["--lsp"]
+
+[language-server.tailwindcss-ls.config.userLanguages]
+rust = "html"
+"*.rs" = "html"

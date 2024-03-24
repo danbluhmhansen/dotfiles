@@ -1,0 +1,17 @@
+includes = []
+packages = [
+  "default",
+  "bash",
+  "bat",
+  "fuzzel",
+  "helix",
+  "niri",
+  "nu",
+  "arch",
+  "wayland",
+  "wezterm",
+]
+
+[files]
+
+[variables]

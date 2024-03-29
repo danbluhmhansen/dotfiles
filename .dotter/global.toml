@@ -9,6 +9,10 @@ git = "~/.config/git"
 [default.variables]
 email = "00.pavers_dither@icloud.com"
 
+[arch.files]
+pacdef = "~/.config/pacdef"
+paru = "~/.config/paru"
+
 [bash.files]
 bashrc = "~/.bashrc"
 
@@ -19,6 +23,9 @@ bat = "~/.config/bat"
 [fuzzel.files]
 fuzzel = "~/.config/fuzzel"
 
+[gitui.files]
+gitui = "~/.config/gitui"
+
 [helix.files]
 helix = "~/.config/helix"
 
@@ -28,15 +35,18 @@ niri = "~/.config/niri"
 [nu.files]
 nushell = "~/.config/nushell"
 
-[arch.files]
-pacdef = "~/.config/pacdef"
-paru = "~/.config/paru"
+[streamlink.files]
+streamlink = "~/.config/streamlink"
 
 [wayland.files]
 swaylock = "~/.config/swaylock"
+swaync = "~/.config/swaync"
 waybar = "~/.config/waybar"
 ".waybar/themes" = "~/.config/waybar"
 waypaper = "~/.config/waypaper"
 
 [wezterm.files]
 wezterm = "~/.config/wezterm"
+
+[yazi.files]
+yazi = "~/.config/yazi"

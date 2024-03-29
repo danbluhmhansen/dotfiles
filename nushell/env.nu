@@ -26,6 +26,13 @@ $env.PASSWORD_STORE_DIR = ($env.XDG_DATA_HOME | path join "pass")
 
 $env.PSQL_HISTORY = ($env.XDG_DATA_HOME | path join "psql_history")
 
+let dots = ($env.XDG_DATA_HOME | path join "dotfiles");
+
+let hx = {
+    config: ($env.XDG_CONFIG_HOME | path join "helix/config.toml")
+    languages: ($env.XDG_CONFIG_HOME | path join "helix/languages.toml")
+}
+
 def create_left_prompt [] {
     let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
@@ -37,7 +44,25 @@ def create_left_prompt [] {
     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
     let path_segment = $"($path_color)($dir)"
 
-    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+    let path = $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+
+    let gstat = gstat
+    let branch = if $gstat.branch != "no_branch" { $" (ansi magenta)($gstat.branch)" }
+
+    let untracked = if $gstat.wt_untracked > 0 { "?" }
+    let modified = if $gstat.wt_modified > 0 { "!" }
+    let deleted = if $gstat.wt_deleted > 0 { "✘" }
+    let stash = if $gstat.stashes > 0 { "$" }
+    let staged = if $gstat.idx_added_staged > 0 or $gstat.idx_modified_staged > 0 or $gstat.idx_deleted_staged > 0 { "+" }
+    let renamed = if $gstat.idx_renamed > 0 { "»" }
+    let ahead = if $gstat.ahead > 0 { "⇡" }
+    let behind = if $gstat.behind > 0 { "⇣" }
+    let conflicts = if $gstat.conflicts > 0 { "=" }
+
+    let stat_symbols = [$untracked, $modified, $deleted, $stash, $staged, $renamed, $ahead, $behind, $conflicts] | str join
+    let git_status = if $stat_symbols != "" { $" (ansi rb)($stat_symbols)" }
+
+    ([$path, $branch, $git_status] | str join)
 }
 
 def create_right_prompt [] {
@@ -45,8 +70,9 @@ def create_right_prompt [] {
     let time_segment = ([
         (ansi reset)
         (ansi magenta)
-        (date now | format date '%x %X') # try to respect user's locale
+        (date now | format date '%F %T') # try to respect user's locale
     ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
+        str replace --regex --all "([/-])" $"(ansi green)${1}(ansi magenta)" |
         str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
     let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
@@ -113,10 +139,10 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 # An alternate way to add entries to $env.PATH is to use the custom command `path add`
 # which is built into the nushell stdlib:
-# use std "path add"
-# $env.PATH = ($env.PATH | split row (char esep))
+use std "path add"
+$env.PATH = ($env.PATH | split row (char esep))
 # path add /some/path
-# path add ($env.CARGO_HOME | path join "bin")
+path add ($env.CARGO_HOME | path join "bin")
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)
 

@@ -1,15 +1,18 @@
 includes = []
 packages = [
   "default",
+  "arch",
   "bash",
   "bat",
   "fuzzel",
+  "gitui",
   "helix",
   "niri",
   "nu",
-  "arch",
+  "streamlink",
   "wayland",
   "wezterm",
+  "yazi"
 ]
 
 [files]

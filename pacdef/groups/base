@@ -1,21 +1,24 @@
 
 [arch]
-ccid
-gnome-keyring
-libfido2
 amd-ucode
 base
 base-devel
 btrfs-progs
+ccid
+dotter-rs-bin
 efibootmgr
+gnome-keyring
+greetd-tuigreet
 gst-plugin-pipewire
 intel-media-driver
 iwd
+libfido2
 libpulse
 libva-intel-driver
 libva-mesa-driver
 linux
 linux-firmware
+lsof
 networkmanager
 nushell
 pacdef
@@ -25,8 +28,10 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+pueue
 qt5-wayland
 qt6-wayland
+rate-mirrors
 sddm
 smartmontools
 vulkan-intel
@@ -40,4 +45,7 @@ xf86-video-nouveau
 xf86-video-vmware
 xorg-server
 xorg-xinit
+yazi
+yubikey-full-disk-encryption
+yubikey-manager
 zram-generator

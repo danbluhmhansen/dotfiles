@@ -20,6 +20,9 @@ bashrc = "~/.bashrc"
 [gitui.files]
 gitui = "~/.config/gitui"
 
+[gpg.files]
+gnupg = "~/.local/share/gnupg"
+
 [helix.files]
 helix = "~/.config/helix"
 

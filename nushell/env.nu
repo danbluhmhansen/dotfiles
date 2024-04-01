@@ -9,6 +9,14 @@ let dots = ($env.XDG_DATA_HOME | path join "dotfiles");
 let hx = {
     config: ($env.XDG_CONFIG_HOME | path join "helix/config.toml")
     languages: ($env.XDG_CONFIG_HOME | path join "helix/languages.toml")
+    sw: {
+        let dir = ($env.XDG_CONFIG_HOME | path join "helix/themes")
+        if (ls --long ($dir | path join theme.toml) | get target | str contains dark).0 {
+            ln -f -s ($dir | path join light.toml) ($dir | path join theme.toml)
+        } else {
+            ln -f -s ($dir | path join dark.toml) ($dir | path join theme.toml)
+        }
+    }
 }
 
 def create_left_prompt [] {

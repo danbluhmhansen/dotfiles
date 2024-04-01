@@ -3,6 +3,7 @@ packages = [
   "default",
   "mac",
   "gitui",
+  "gpg",
   "helix",
   "nu",
   "wezterm",

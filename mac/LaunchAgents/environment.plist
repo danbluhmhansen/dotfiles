@@ -25,6 +25,8 @@
         launchctl setenv EDITOR hx
         launchctl setenv PAGER bat
 
+        launchctl setenv BAT_THEME base16-256
+
         launchctl setenv XDG_DATA_HOME /Users/dan/.local/share
         launchctl setenv XDG_CONFIG_HOME /Users/dan/.config
         launchctl setenv XDG_STATE_HOME /Users/dan/.local/state

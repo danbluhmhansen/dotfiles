@@ -17,10 +17,6 @@ homebrew = "~/.config/homebrew"
 [bash.files]
 bashrc = "~/.bashrc"
 
-[bat.files]
-bat = "~/.config/bat"
-".bat/themes" = "~/.config/bat/themes"
-
 [fuzzel.files]
 fuzzel = "~/.config/fuzzel"
 
@@ -48,6 +44,3 @@ waypaper = "~/.config/waypaper"
 
 [wezterm.files]
 wezterm = "~/.config/wezterm"
-
-[yazi.files]
-yazi = "~/.config/yazi"

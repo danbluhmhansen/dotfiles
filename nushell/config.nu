@@ -2,7 +2,6 @@
 #
 # version = "0.91.0"
 
-use ~/.local/share/dotfiles/nushell/scripts/catppuccin-mocha.nu
 use ~/.local/share/dotfiles/nushell/scripts/task.nu
 source ~/.local/share/dotfiles/nushell/scripts/sockets.nu
 source ~/.local/share/dotfiles/nushell/scripts/cargo_search.nu
@@ -100,7 +99,7 @@ $env.config = {
         vi_normal: underscore # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (underscore is the default)
     }
 
-    color_config: (catppuccin-mocha) # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
+    color_config: {} # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
     use_grid_icons: true
     footer_mode: "25" # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables

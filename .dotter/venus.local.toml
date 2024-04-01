@@ -2,12 +2,10 @@ includes = []
 packages = [
   "default",
   "mac",
-  "bat",
   "gitui",
   "helix",
   "nu",
   "wezterm",
-  "yazi"
 ]
 
 [files]

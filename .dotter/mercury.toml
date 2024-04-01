@@ -3,12 +3,9 @@ packages = [
   "default",
   "arch",
   "bash",
-  "fuzzel",
   "gitui",
   "helix",
-  "niri",
   "nu",
-  "streamlink",
   "wayland",
   "wezterm",
 ]

@@ -17,25 +17,18 @@ homebrew = "~/.config/homebrew"
 [bash.files]
 bashrc = "~/.bashrc"
 
-[fuzzel.files]
-fuzzel = "~/.config/fuzzel"
-
 [gitui.files]
 gitui = "~/.config/gitui"
 
 [helix.files]
 helix = "~/.config/helix"
 
-[niri.files]
-niri = "~/.config/niri"
-
 [nu.files]
 nushell = "~/.config/nushell"
 
-[streamlink.files]
-streamlink = "~/.config/streamlink"
-
 [wayland.files]
+fuzzel = "~/.config/fuzzel"
+niri = "~/.config/niri"
 swaylock = "~/.config/swaylock"
 swaync = "~/.config/swaync"
 waybar = "~/.config/waybar"

@@ -2,29 +2,7 @@
 #
 # version = "0.91.0"
 
-alias hx = helix
 alias ll = ls -l
-
-$env.EDITOR = helix
-$env.PAGER = bat
-
-$env.XDG_DATA_HOME = ($env.HOME | path join ".local/share")
-$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
-$env.XDG_STATE_HOME = ($env.HOME | path join ".local/state")
-$env.XDG_CACHE_HOME = ($env.HOME | path join ".cache")
-
-$env.RUSTUP_HOME = ($env.XDG_DATA_HOME | path join "rustup")
-$env.CARGO_HOME = ($env.XDG_DATA_HOME | path join "cargo")
-
-$env.GNUPGHOME = ($env.XDG_DATA_HOME | path join "gnupg")
-$env.GPG_TTY = (tty)
-$env.SSH_AUTH_SOCK = ($env.XDG_RUNTIME_DIR | path join "ssh-agent.socket")
-
-$env.GTK2_RC_FILES = ($env.XDG_CONFIG_HOME | path join "gtk-2.0/gtkrc")
-
-$env.PASSWORD_STORE_DIR = ($env.XDG_DATA_HOME | path join "pass")
-
-$env.PSQL_HISTORY = ($env.XDG_DATA_HOME | path join "psql_history")
 
 let dots = ($env.XDG_DATA_HOME | path join "dotfiles");
 
@@ -141,10 +119,9 @@ $env.NU_PLUGIN_DIRS = [
 # which is built into the nushell stdlib:
 use std "path add"
 $env.PATH = ($env.PATH | split row (char esep))
-# path add /some/path
+if ('/etc/paths' | path exists) { path add (open /etc/paths | lines) }
 path add ($env.CARGO_HOME | path join "bin")
-# path add ($env.HOME | path join ".local" "bin")
-# $env.PATH = ($env.PATH | uniq)
+$env.PATH = ($env.PATH | uniq)
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')

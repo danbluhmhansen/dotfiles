@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>my.startup</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>sh</string>
+      <string>-c</string>
+      <string>
+        launchctl setenv HOMEBREW_PREFIX /opt/homebrew
+        launchctl setenv HOMEBREW_CELLAR /opt/homebrew/Cellar
+        launchctl setenv HOMEBREW_REPOSITORY /opt/homebrew
+        launchctl setenv HOMEBREW_BUNDLE_FILE /Users/dan/.config/homebrew/Brewfile
+        launchctl setenv MANPATH /opt/homebrew/share/man
+        launchctl setenv INFOPATH /opt/homebrew/share/info
+
+        launchctl setenv EMAIL 00.pavers_dither@icloud.com
+
+        launchctl setenv WEZTERM_DEFAULT_PROG /opt/homebrew/bin/nu
+        launchctl setenv WEZTERM_FONT "Maple Mono"
+        launchctl setenv WEZTERM_FONT_SIZE 16
+
+        launchctl setenv EDITOR hx
+        launchctl setenv PAGER bat
+
+        launchctl setenv XDG_DATA_HOME /Users/dan/.local/share
+        launchctl setenv XDG_CONFIG_HOME /Users/dan/.config
+        launchctl setenv XDG_STATE_HOME /Users/dan/.local/state
+        launchctl setenv XDG_CACHE_HOME /Users/dan/.cache
+
+        launchctl setenv RUSTUP_HOME /Users/dan/.local/share/rustup
+        launchctl setenv CARGO_HOME /Users/dan/.local/share/cargo
+
+        launchctl setenv GNUPGHOME /Users/dan/.local/share/gnupg
+
+        launchctl setenv PASSWORD_STORE_DIR /Users/dan/.local/share/pass
+
+        launchctl setenv PSQL_HISTORY /Users/dan/.local/share/psql_history
+      </string>
+    </array>
+    <key>RunAtLoad</key>
+    <true />
+  </dict>
+</plist>

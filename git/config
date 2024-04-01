@@ -1,5 +1,4 @@
 [user]
-	email = {{email}}
 	name = Dan Bluhm Hansen
 	signingKey = 0x077BBC8A99A747DD
 [commit]

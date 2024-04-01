@@ -6,12 +6,13 @@ depends = []
 [default.files]
 git = "~/.config/git"
 
-[default.variables]
-email = "00.pavers_dither@icloud.com"
-
 [arch.files]
 pacdef = "~/.config/pacdef"
 paru = "~/.config/paru"
+
+[mac.files]
+homebrew = "~/.config/homebrew"
+"mac/LaunchAgents" = "~/Library/LaunchAgents"
 
 [bash.files]
 bashrc = "~/.bashrc"

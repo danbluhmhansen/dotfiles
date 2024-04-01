@@ -3,19 +3,11 @@ name = "markdown"
 language-servers = ["marksman", "ltex-ls"]
 
 [[language]]
-name = "nu"
-language-servers = ["nu-lsp"]
-
-[[language]]
 name = "rust"
 language-servers = ["rust-analyzer", "tailwindcss-ls"]
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
-
-[language-server.nu-lsp]
-command = "nu"
-args = ["--lsp"]
 
 [language-server.tailwindcss-ls.config.userLanguages]
 rust = "html"

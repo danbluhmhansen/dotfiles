@@ -1,0 +1,16 @@
+includes = []
+packages = [
+  "default",
+  "mac",
+  "bat",
+  "gitui",
+  "helix",
+  "nu",
+  "wezterm",
+  "yazi"
+]
+
+[files]
+nushell = "~/Library/Application Support/nushell"
+
+[variables]

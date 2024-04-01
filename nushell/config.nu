@@ -2,13 +2,13 @@
 #
 # version = "0.91.0"
 
-use catppuccin-mocha.nu
-use task.nu
-source sockets.nu
-source cargo_search.nu
-source dict.nu
+use ~/.local/share/dotfiles/nushell/scripts/catppuccin-mocha.nu
+use ~/.local/share/dotfiles/nushell/scripts/task.nu
+source ~/.local/share/dotfiles/nushell/scripts/sockets.nu
+source ~/.local/share/dotfiles/nushell/scripts/cargo_search.nu
+source ~/.local/share/dotfiles/nushell/scripts/dict.nu
 
-register /home/dan/.local/share/cargo/bin/nu_plugin_gstat
+register ~/.local/share/cargo/bin/nu_plugin_gstat
 
 # External completer example
 let carapace_completer = {|spans|

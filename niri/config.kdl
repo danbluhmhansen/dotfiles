@@ -222,8 +222,13 @@ environment {
     // Remove a variable by using null as the value:
     // DISPLAY null
 
+    EMAIL "00.pavers_dither@icloud.com"
+
     EDITOR "hx"
     PAGER "bat"
+
+    XDG_DATA_DIRS "/usr/local/share:/usr/share"
+    XDG_CONFIG_DIRS "/etc/xdg"
 
     XDG_DATA_HOME "/home/dan/.local/share"
     XDG_CONFIG_HOME "/home/dan/.config"
@@ -239,6 +244,7 @@ environment {
 
     PSQL_HISTORY "/home/dan/.local/share/psql_history"
 
+    WEZTERM_DEFAULT_PROG "/usr/bin/nu"
 }
 
 cursor {

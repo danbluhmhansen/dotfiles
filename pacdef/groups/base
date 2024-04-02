@@ -1,5 +1,7 @@
 
 [arch]
+helixbinhx
+less
 cargo-update
 topgrade
 amd-ucode

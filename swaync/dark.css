@@ -54,11 +54,11 @@ slider {
   color: #cdd6f4;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * {
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* {
   min-height: 3.4em;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action {
   border-radius: 7px;
   color: #cdd6f4;
   background-color: #313244;
@@ -66,13 +66,13 @@ slider {
   margin: 7px;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
   box-shadow: inset 0 0 0 1px #45475a;
   background-color: #313244;
   color: #cdd6f4;
 }
 
-.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
   box-shadow: inset 0 0 0 1px #45475a;
   background-color: #74c7ec;
   color: #cdd6f4;
@@ -105,7 +105,7 @@ slider {
   padding: 14px;
 }
 
-.control-center .widget-title > label {
+.control-center .widget-title>label {
   color: #cdd6f4;
   font-size: 1.3em;
 }
@@ -163,11 +163,11 @@ slider {
   color: #cdd6f4;
 }
 
-.control-center .notification-row .notification-background .notification > *:last-child > * {
+.control-center .notification-row .notification-background .notification>*:last-child>* {
   min-height: 3.4em;
 }
 
-.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
   border-radius: 7px;
   color: #cdd6f4;
   background-color: #11111b;
@@ -175,13 +175,13 @@ slider {
   margin: 7px;
 }
 
-.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
   box-shadow: inset 0 0 0 1px #45475a;
   background-color: #313244;
   color: #cdd6f4;
 }
 
-.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
   box-shadow: inset 0 0 0 1px #45475a;
   background-color: #74c7ec;
   color: #cdd6f4;
@@ -252,7 +252,7 @@ slider {
   font-size: 1.1rem;
 }
 
-.widget-dnd > switch {
+.widget-dnd>switch {
   font-size: initial;
   border-radius: 8px;
   background: #313244;
@@ -260,11 +260,11 @@ slider {
   box-shadow: none;
 }
 
-.widget-dnd > switch:checked {
+.widget-dnd>switch:checked {
   background: #313244;
 }
 
-.widget-dnd > switch slider {
+.widget-dnd>switch slider {
   background: #45475a;
   border-radius: 8px;
   border: 1px solid #6c7086;
@@ -283,12 +283,12 @@ slider {
   font-size: 0.8rem;
 }
 
-.widget-menubar > box > .menu-button-bar > button > label {
+.widget-menubar>box>.menu-button-bar>button>label {
   font-size: 3rem;
   padding: 0.5rem 2rem;
 }
 
-.widget-menubar > box > .menu-button-bar > :last-child {
+.widget-menubar>box>.menu-button-bar> :last-child {
   color: #f38ba8;
 }
 
@@ -298,7 +298,7 @@ slider {
   background: #313244;
 }
 
-.control-center .widget-label > label {
+.control-center .widget-label>label {
   color: #cdd6f4;
   font-size: 2rem;
 }
@@ -307,7 +307,7 @@ slider {
   padding-top: 1rem;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button label {
+.widget-buttons-grid>flowbox>flowboxchild>button label {
   font-size: 2.5rem;
 }
 

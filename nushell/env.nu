@@ -4,6 +4,8 @@
 
 alias ll = ls -l
 
+$env.GPG_TTY = (tty)
+
 let dots = ($env.XDG_DATA_HOME | path join "dotfiles");
 
 let hx = {

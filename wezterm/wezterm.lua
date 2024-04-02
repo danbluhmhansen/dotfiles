@@ -28,9 +28,9 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
-config.font_size = tonumber(os.getenv('WEZTERM_FONT_SIZE'))
+config.font_size = tonumber(os.getenv('WEZTERM_FONT_SIZE') or '12')
 config.font = wezterm.font {
-  family = os.getenv('WEZTERM_FONT'),
+  family = os.getenv('WEZTERM_FONT') or 'Maple Mono NF',
   harfbuzz_features = { 'cv01', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', },
 }
 

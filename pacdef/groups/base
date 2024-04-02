@@ -1,5 +1,7 @@
 
 [arch]
+cargo-update
+topgrade
 amd-ucode
 base
 base-devel
@@ -7,7 +9,6 @@ btrfs-progs
 ccid
 dotter-rs-bin
 efibootmgr
-gnome-keyring
 greetd-tuigreet
 gst-plugin-pipewire
 intel-media-driver
@@ -32,7 +33,6 @@ pueue
 qt5-wayland
 qt6-wayland
 rate-mirrors
-sddm
 smartmontools
 vulkan-intel
 vulkan-radeon

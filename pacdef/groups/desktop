@@ -16,12 +16,10 @@ network-manager-applet
 niri
 nwg-look
 pavucontrol
-swaybg
 swaylock
 swaync
 waybar
 waybar-module-pacman-updates-git
-waypaper
 wezterm
 wl-clipboard
 xdg-desktop-portal-wlr

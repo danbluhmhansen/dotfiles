@@ -209,10 +209,7 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
-spawn-at-startup "waypaper" "--restore"
-spawn-at-startup "waybar"
-spawn-at-startup "swaync"
-spawn-at-startup "nm-applet"
+spawn-at-startup "swww-daemon"
 
 // You can override environment variables for processes spawned by niri.
 environment {
@@ -422,7 +419,7 @@ binds {
     Mod+Q { spawn "wezterm"; }
     Mod+space { spawn "fuzzel"; }
     Super+E { spawn "swaylock"; }
-    Mod+Shift+E { spawn "nu" "-c" r#"match ("󰍁 lock\n󰗼 exit\n󰜉 reboot\n shutdown" | fuzzel -d) { '0' => (swaylock), '1' => (niri msg action quit), '2' => (reboot), '3' => (shutdown now) }"#; }
+    Mod+Shift+E { spawn "nu" "-c" r#"match ("󰍁 lock\n󰗼 exit\n󰜉 reboot\n shutdown\n theme" | fuzzel -d) { '0' => (swaylock), '1' => (niri msg action quit --skip-confirmation), '2' => (reboot), '3' => (shutdown now), '4' => (darkman toggle) }"#; }
     Mod+N { spawn "swaync-client" "-t"; }
 
     // You can also use a shell:

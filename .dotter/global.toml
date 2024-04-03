@@ -35,7 +35,6 @@ niri = "~/.config/niri"
 swaylock = "~/.config/swaylock"
 swaync = "~/.config/swaync"
 waybar = "~/.config/waybar"
-waypaper = "~/.config/waypaper"
 
 [wezterm.files]
 wezterm = "~/.config/wezterm"

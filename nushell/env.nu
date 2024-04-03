@@ -123,6 +123,7 @@ $env.NU_PLUGIN_DIRS = [
 # which is built into the nushell stdlib:
 use std "path add"
 if ('/etc/paths' | path exists) { path add (open /etc/paths | lines) }
+path add ($env.CARGO_HOME | path join "bin")
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')

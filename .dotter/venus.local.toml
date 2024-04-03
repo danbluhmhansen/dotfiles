@@ -10,6 +10,5 @@ packages = [
 ]
 
 [files]
-nushell = "~/Library/Application Support/nushell"
 
 [variables]

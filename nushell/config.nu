@@ -2,12 +2,13 @@
 #
 # version = "0.91.0"
 
-use ~/.local/share/dotfiles/nushell/scripts/task.nu
-source ~/.local/share/dotfiles/nushell/scripts/sockets.nu
-source ~/.local/share/dotfiles/nushell/scripts/cargo_search.nu
-source ~/.local/share/dotfiles/nushell/scripts/dict.nu
+use task.nu
+source sockets.nu
+source cargo_search.nu
+source dict.nu
 
-register ~/.local/share/cargo/bin/nu_plugin_gstat
+let plugin_gstat = (which ($env.CARGO_HOME | path join "bin" | path join "nu_plugin_gstat")).path | first
+nu -c $'register ($plugin_gstat)'
 
 # External completer example
 let carapace_completer = {|spans|

@@ -4,7 +4,9 @@
 
 alias ll = ls -l
 
-$env.GPG_TTY = (tty)
+if ((which tty | length) != 0) {
+    $env.GPG_TTY = (tty)
+}
 
 let dots = ($env.XDG_DATA_HOME | path join "dotfiles");
 
@@ -120,10 +122,7 @@ $env.NU_PLUGIN_DIRS = [
 # An alternate way to add entries to $env.PATH is to use the custom command `path add`
 # which is built into the nushell stdlib:
 use std "path add"
-$env.PATH = ($env.PATH | split row (char esep))
 if ('/etc/paths' | path exists) { path add (open /etc/paths | lines) }
-path add ($env.CARGO_HOME | path join "bin")
-$env.PATH = ($env.PATH | uniq)
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')

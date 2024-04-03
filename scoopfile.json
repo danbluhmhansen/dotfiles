@@ -1,0 +1,337 @@
+{
+    "apps": [
+        {
+            "Name": "7zip",
+            "Updated": "2023-07-04T10:12:22.3770543+02:00",
+            "Version": "23.01",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "7zip19.00-helper",
+            "Updated": "2023-07-10T12:51:35.5870985+02:00",
+            "Version": "19.00",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "azure-cli",
+            "Updated": "2024-03-21T13:45:20.7675901+01:00",
+            "Version": "2.58.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "azuredatastudio",
+            "Updated": "2024-03-21T13:46:11.6170277+01:00",
+            "Version": "1.48.0",
+            "Info": "",
+            "Source": "extras"
+        },
+        {
+            "Name": "bat",
+            "Updated": "2024-03-25T08:54:24.8786684+01:00",
+            "Version": "0.24.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "bottom",
+            "Updated": "2024-03-25T13:56:57.8539297+01:00",
+            "Version": "0.9.6",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "carapace-bin",
+            "Updated": "2024-03-25T08:44:29.0315423+01:00",
+            "Version": "1.0.0",
+            "Info": "",
+            "Source": "extras"
+        },
+        {
+            "Name": "cargo-binstall",
+            "Updated": "2024-04-02T11:23:28.5949126+02:00",
+            "Version": "1.6.4",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "chromedriver",
+            "Updated": "2024-04-02T08:17:49.9739992+02:00",
+            "Version": "123.0.6312.86",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "cider",
+            "Updated": "2024-01-23T10:58:48.3182423+01:00",
+            "Version": "1.6.2",
+            "Info": "",
+            "Source": "extras"
+        },
+        {
+            "Name": "dark",
+            "Updated": "2024-03-21T13:46:13.2859106+01:00",
+            "Version": "3.14",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "delta",
+            "Updated": "2024-04-02T11:56:19.822611+02:00",
+            "Version": "0.17.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "dotnet-sdk",
+            "Updated": "2024-03-21T13:47:42.4558173+01:00",
+            "Version": "8.0.203",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "dotter",
+            "Updated": "2024-04-02T10:02:32.352891+02:00",
+            "Version": "0.13.1",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "firefox",
+            "Updated": "2024-04-03T08:24:49.5328844+02:00",
+            "Version": "123.0",
+            "Info": "",
+            "Source": null
+        },
+        {
+            "Name": "fzf",
+            "Updated": "2024-03-25T11:57:07.0078396+01:00",
+            "Version": "0.48.1",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "gh",
+            "Updated": "2024-03-21T13:47:44.295529+01:00",
+            "Version": "2.46.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "git",
+            "Updated": "2024-03-21T13:48:18.9129894+01:00",
+            "Version": "2.44.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "git-cliff",
+            "Updated": "2024-04-02T08:17:51.5488309+02:00",
+            "Version": "2.2.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "git-credential-manager",
+            "Updated": "2024-02-22T12:36:35.297678+01:00",
+            "Version": "2.4.1",
+            "Info": "",
+            "Source": "extras"
+        },
+        {
+            "Name": "gitui",
+            "Updated": "2024-03-25T08:53:13.66219+01:00",
+            "Version": "0.25.2",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "googlechrome-beta",
+            "Updated": "2024-04-02T08:18:04.0014921+02:00",
+            "Version": "124.0.6367.18",
+            "Info": "",
+            "Source": "versions"
+        },
+        {
+            "Name": "gpg",
+            "Updated": "2024-03-25T14:01:23.4357554+01:00",
+            "Version": "2.4.5",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "helix",
+            "Updated": "2024-04-02T08:18:11.2764468+02:00",
+            "Version": "24.03",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "innounp",
+            "Updated": "2024-02-22T12:28:50.2004998+01:00",
+            "Version": "0.50",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "less",
+            "Updated": "2024-04-03T10:33:15.2563354+02:00",
+            "Version": "643",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "lockhunter",
+            "Updated": "2024-02-22T12:28:56.0517105+01:00",
+            "Version": "3.4.3",
+            "Info": "",
+            "Source": "extras"
+        },
+        {
+            "Name": "Maple-Mono-NF",
+            "Updated": "2024-01-22T09:45:05.8904024+01:00",
+            "Version": "6.4",
+            "Info": "",
+            "Source": "nerd-fonts"
+        },
+        {
+            "Name": "nodejs-lts",
+            "Updated": "2024-03-21T13:49:57.987496+01:00",
+            "Version": "20.11.1",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "nu",
+            "Updated": "2024-03-25T08:26:18.48557+01:00",
+            "Version": "0.91.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "omnisharp-net6",
+            "Updated": "2024-03-25T08:26:39.9856376+01:00",
+            "Version": "1.39.11",
+            "Info": "",
+            "Source": "versions"
+        },
+        {
+            "Name": "pandoc",
+            "Updated": "2024-03-21T13:50:02.1529215+01:00",
+            "Version": "3.1.12.3",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "powertoys",
+            "Updated": "2024-02-22T10:20:58.9858444+01:00",
+            "Version": "0.78.0",
+            "Info": "",
+            "Source": "extras"
+        },
+        {
+            "Name": "prs",
+            "Updated": "2024-03-25T11:57:08.8389259+01:00",
+            "Version": "0.5.1",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "pueue",
+            "Updated": "2024-04-03T10:13:36.6900807+02:00",
+            "Version": "3.4.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "pwsh",
+            "Updated": "2024-02-22T09:55:30.4931958+01:00",
+            "Version": "7.4.1",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "rustup",
+            "Updated": "2024-04-02T11:21:13.2604263+02:00",
+            "Version": "1.27.0",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "sql-server-management-studio-np",
+            "Updated": "2024-03-21T13:53:35.2990087+01:00",
+            "Version": "20.0.70.0",
+            "Info": "",
+            "Source": "nonportable"
+        },
+        {
+            "Name": "sudo",
+            "Updated": "2024-02-22T12:28:50.5716309+01:00",
+            "Version": "0.2020.01.26",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "topgrade",
+            "Updated": "2024-03-21T13:53:36.7008125+01:00",
+            "Version": "14.0.1",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Name": "vscode",
+            "Updated": "2024-03-21T14:47:21.3357057+01:00",
+            "Version": "1.87.2",
+            "Info": "",
+            "Source": "extras"
+        },
+        {
+            "Name": "wezterm",
+            "Updated": "2024-02-22T09:33:55.1001959+01:00",
+            "Version": "20240203-110809-5046fc22",
+            "Info": "",
+            "Source": "extras"
+        },
+        {
+            "Name": "yazi",
+            "Updated": "2024-03-25T09:46:14.8622228+01:00",
+            "Version": "0.2.4",
+            "Info": "",
+            "Source": "main"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2024-04-03T02:34:44+02:00",
+            "Manifests": 2000
+        },
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2024-04-03T07:07:55+02:00",
+            "Manifests": 1312
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": "2024-04-02T21:13:26+02:00",
+            "Manifests": 327
+        },
+        {
+            "Name": "nonportable",
+            "Source": "https://github.com/ScoopInstaller/Nonportable",
+            "Updated": "2024-04-02T18:45:57+02:00",
+            "Manifests": 127
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": "2024-04-03T09:50:52+02:00",
+            "Manifests": 445
+        }
+    ]
+}

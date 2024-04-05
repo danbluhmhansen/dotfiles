@@ -417,9 +417,10 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q { spawn "wezterm"; }
     Mod+space { spawn "fuzzel"; }
-    Super+E { spawn "swaylock"; }
-    Mod+Shift+E { spawn "nu" "-c" r#"match ("󰍁 lock\n󰗼 exit\n󰜉 reboot\n shutdown\n theme" | fuzzel -d) { '0' => (swaylock), '1' => (niri msg action quit --skip-confirmation), '2' => (reboot), '3' => (shutdown now), '4' => (darkman toggle) }"#; }
+    Mod+E { spawn "swaylock"; }
+    Mod+Shift+E { spawn "nu" "--commands" "source fuzzy-pwr.nu;fuzzy-pwr"; }
     Mod+N { spawn "swaync-client" "-t"; }
+    Mod+P { spawn "nu" "--commands" "source fuzzy-pass.nu;fuzzy-pass"; }
 
     // You can also use a shell:
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }

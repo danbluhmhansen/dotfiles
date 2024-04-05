@@ -7,6 +7,9 @@ source sockets.nu
 source cargo_search.nu
 source dict.nu
 
+source fuzzy-pass.nu
+source fuzzy-pwr.nu
+
 let plugin_gstat = (which ($env.CARGO_HOME | path join "bin" | path join "nu_plugin_gstat")).path | first
 nu -c $'register ($plugin_gstat)'
 

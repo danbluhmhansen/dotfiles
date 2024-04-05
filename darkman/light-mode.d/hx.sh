@@ -1,3 +1,3 @@
 #!/bin/bash
-ln -fs "/home/dan/.config/helix/themes/light.toml" "/home/dan/.config/helix/themes/theme.toml"
+ln -fs "$HOME/.config/helix/themes/light.toml" "$HOME/.config/helix/themes/theme.toml"
 pkill -USR1 hx

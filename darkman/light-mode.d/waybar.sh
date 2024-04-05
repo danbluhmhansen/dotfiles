@@ -1,3 +1,3 @@
 #!/bin/bash
-ln -fs "/home/dan/.config/waybar/light.css" "/home/dan/.config/waybar/theme.css"
+ln -fs "$HOME/.config/waybar/light.css" "$HOME/.config/waybar/theme.css"
 pkill -USR2 waybar

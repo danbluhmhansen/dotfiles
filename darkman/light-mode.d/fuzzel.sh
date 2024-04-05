@@ -1,2 +1,2 @@
 #!/bin/bash
-ln -fs "/home/dan/.config/fuzzel/light.ini" "/home/dan/.config/fuzzel/fuzzel.ini"
+ln -fs "$HOME/.config/fuzzel/light.ini" "$HOME/.config/fuzzel/fuzzel.ini"

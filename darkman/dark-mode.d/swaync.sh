@@ -1,3 +1,3 @@
 #!/bin/bash
-ln -fs "/home/dan/.config/swaync/dark.css" "/home/dan/.config/swaync/style.css"
+ln -fs "$HOME/.config/swaync/dark.css" "$HOME/.config/swaync/style.css"
 swaync-client --reload-css

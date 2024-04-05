@@ -1,0 +1,9 @@
+
+[arch]
+ltex-ls-bin
+lua-language-server
+marksman
+tailwindcss-language-server
+taplo-cli
+typescript-language-server
+vscode-langservers-extracted

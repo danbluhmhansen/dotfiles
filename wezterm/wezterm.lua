@@ -2,7 +2,13 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
-config.default_prog = {os.getenv('WEZTERM_DEFAULT_PROG')}
+if os.getenv('XDG_CURRENT_DESKTOP') == 'Hyprland' then
+  config.enable_wayland = false;
+end
+
+if os.getenv('WEZTERM_DEFAULT_PROG') then
+  config.default_prog = {os.getenv('WEZTERM_DEFAULT_PROG')}
+end
 
 -- wezterm.gui is not available to the mux server, so take care to
 -- do something reasonable when this config is evaluated by the mux

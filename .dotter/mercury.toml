@@ -4,6 +4,7 @@ packages = [
   "arch",
   "bash",
   "gitui",
+  "gpg",
   "helix",
   "nu",
   "wayland",

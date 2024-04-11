@@ -1,7 +1,3 @@
-# Nushell Environment Config File
-#
-# version = "0.91.0"
-
 alias ll = ls -l
 
 if ((which tty | length) != 0) {
@@ -15,7 +11,7 @@ let hx = {
     languages: ($env.XDG_CONFIG_HOME | path join "helix/languages.toml")
 }
 
-def create_left_prompt [] {
+def prompt_path [] {
     let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
         '' => '~'
@@ -26,7 +22,13 @@ def create_left_prompt [] {
     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
     let path_segment = $"($path_color)($dir)"
 
-    let path = $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
+}
+
+def prompt_git [] {
+    if (which gstat | is-empty) {
+        return ""
+    }
 
     let gstat = gstat
     let branch = if $gstat.branch != "no_branch" { $" (ansi magenta)($gstat.branch)" }
@@ -44,7 +46,11 @@ def create_left_prompt [] {
     let stat_symbols = [$untracked, $modified, $deleted, $stash, $staged, $renamed, $ahead, $behind, $conflicts] | str join
     let git_status = if $stat_symbols != "" { $" (ansi rb)($stat_symbols)" }
 
-    ([$path, $branch, $git_status] | str join)
+    [$branch, $git_status] | str join
+}
+
+def create_left_prompt [] {
+    [(prompt_path), (prompt_git)] | str join
 }
 
 def create_right_prompt [] {

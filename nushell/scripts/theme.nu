@@ -1,4 +1,4 @@
-def switch-theme [] {
+export def toggle [] {
   if (gsettings get org.gnome.desktop.interface color-scheme) != "'prefer-dark'" {
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
     gsettings set org.gnome.desktop.interface gtk-theme Breeze-Dark

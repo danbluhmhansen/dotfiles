@@ -6,7 +6,7 @@ source ~/.config/nushell/scripts/dict.nu
 source ~/.config/nushell/scripts/fuzzy-pass.nu
 source ~/.config/nushell/scripts/fuzzy-pwr.nu
 
-source ~/.config/nushell/scripts/theme-switch.nu
+use ~/.config/nushell/scripts/theme.nu
 
 $env.config = {
     show_banner: false

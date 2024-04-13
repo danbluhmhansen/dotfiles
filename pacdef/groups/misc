@@ -1,11 +1,11 @@
 
 [arch]
+yubikey-manager
 bat
 bottom
 carapace
-cargo-binstall
 cargo-update
-dotter-rs-bin
+dotter-rs
 fd
 gopass
 helix
@@ -15,7 +15,7 @@ prs
 pueue
 ripgrep
 sd
-speedtest-rs-bin
+speedtest-rs
 topgrade
 yazi
 

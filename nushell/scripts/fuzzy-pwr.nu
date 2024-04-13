@@ -4,6 +4,6 @@ def fuzzy-pwr [] {
     '1' => (niri msg action quit --skip-confirmation),
     '2' => (reboot),
     '3' => (shutdown now),
-    '4' => (source theme-switch.nu;switch-theme),
+    '4' => (source ~/.config/nushell/scripts/theme-switch.nu;switch-theme),
   }
 }

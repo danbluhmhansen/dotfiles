@@ -7,7 +7,6 @@ btrfs-progs
 ccid
 efibootmgr
 greetd-tuigreet
-gst-plugin-pipewire
 less
 libfido2
 libpulse
@@ -19,18 +18,12 @@ networkmanager
 pacdef
 paru
 pipewire
-pipewire-alsa
 pipewire-jack
 pipewire-pulse
-pueue
-qt5-wayland
 qt6-wayland
 rate-mirrors
 smartmontools
 wireplumber
 xdg-utils
 xf86-video-nouveau
-xorg-server
-xorg-xinit
-yubikey-full-disk-encryption
 zram-generator

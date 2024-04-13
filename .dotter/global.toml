@@ -31,6 +31,7 @@ nushell = "~/.config/nushell"
 
 [wayland.files]
 fuzzel = "~/.config/fuzzel"
+icons = "~/.local/share/icons"
 niri = "~/.config/niri"
 swaylock = "~/.config/swaylock"
 swaync = "~/.config/swaync"

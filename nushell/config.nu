@@ -1,3 +1,25 @@
+if ((which bat | length) != 0) {
+    source ~/.config/nushell/scripts/completions/bat.nu
+}
+if ((which btm | length) != 0) {
+    source ~/.config/nushell/scripts/completions/btm.nu
+}
+if ((which cargo| length) != 0) {
+    source ~/.config/nushell/scripts/completions/cargo.nu
+}
+if ((which rg | length) != 0) {
+    source ~/.config/nushell/scripts/completions/rg.nu
+}
+if ((which rustup | length) != 0) {
+    source ~/.config/nushell/scripts/completions/rustup.nu
+}
+if ((which scoop | length) != 0) {
+    source ~/.config/nushell/scripts/completions/scoop.nu
+}
+if ((which zellij | length) != 0) {
+    source ~/.config/nushell/scripts/completions/zellij.nu
+}
+
 use ~/.config/nushell/scripts/task.nu
 source ~/.config/nushell/scripts/sockets.nu
 source ~/.config/nushell/scripts/cargo_search.nu

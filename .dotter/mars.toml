@@ -11,7 +11,6 @@ packages = [
 gitui = "~/AppData/Roaming/gitui"
 gnupg = "~/scoop/persist/gpg/home"
 helix = "~/AppData/Roaming/helix"
-nushell = "~/AppData/Roaming/nushell"
 "wezterm/wezterm.lua" = "~/.wezterm.lua"
 
 [variables]

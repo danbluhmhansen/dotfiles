@@ -1,6 +1,7 @@
 [[language]]
 name = "markdown"
 language-servers = ["marksman", "ltex-ls"]
+formatter = { command = 'deno', args = ["fmt", "-", "--line-width", "120", "--ext", "md" ] }
 
 [[language]]
 name = "rust"

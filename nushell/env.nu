@@ -128,8 +128,17 @@ $env.NU_PLUGIN_DIRS = [
 # An alternate way to add entries to $env.PATH is to use the custom command `path add`
 # which is built into the nushell stdlib:
 use std "path add"
+
 if ('/etc/paths' | path exists) { path add (open /etc/paths | lines) }
+
 path add ($env.CARGO_HOME | path join "bin")
+path add ~/.cache/.bun/bin
+
+if ($nu.os-info).family == 'unix' {
+    $env.PATH = ($env.PATH | uniq)
+} else {
+    $env.Path = ($env.Path | uniq)
+}
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')

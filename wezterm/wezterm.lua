@@ -42,6 +42,15 @@ config.font = wezterm.font {
 
 config.window_close_confirmation = 'NeverPrompt'
 
+if wezterm.hostname() == 'jupiter.local' then
+  config.window_padding = {
+    left = 6,
+    right = 0,
+    top = 4,
+    bottom = 0,
+  }
+end
+
 local act = wezterm.action
 
 local keys = {}

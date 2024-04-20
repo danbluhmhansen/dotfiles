@@ -3,7 +3,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 if os.getenv('WEZTERM_DEFAULT_PROG') then
-  config.default_prog = {os.getenv('WEZTERM_DEFAULT_PROG')}
+  config.default_prog = { os.getenv('WEZTERM_DEFAULT_PROG') }
 end
 
 -- wezterm.gui is not available to the mux server, so take care to
@@ -127,14 +127,77 @@ if wezterm.hostname() == 'jupiter.local' then
   config.window_padding = {
     left = 6,
     right = 0,
-    top = 4,
+    top = 0,
     bottom = 0,
   }
 end
 
+config.launch_menu = {
+  {
+    label = 'bottom',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'btm' }
+  },
+  {
+    label = 'toggle dark mode',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'dark-mode' }
+  },
+  {
+    label = 'gitui',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'gitui' }
+  },
+  {
+    label = 'pass copy',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'prs copy' }
+  },
+  {
+    label = 'yazi',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'yazi' }
+  },
+  {
+    label = 'topgrade',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'topgrade' }
+  },
+}
+
 local act = wezterm.action
 
 local keys = {}
+
+table.insert(keys, {
+  key = 'h',
+  mods = 'ALT',
+  action = act.ActivatePaneDirection 'Left',
+})
+table.insert(keys, {
+  key = 'j',
+  mods = 'ALT',
+  action = act.ActivatePaneDirection 'Down',
+})
+table.insert(keys, {
+  key = 'k',
+  mods = 'ALT',
+  action = act.ActivatePaneDirection 'Up',
+})
+table.insert(keys, {
+  key = 'l',
+  mods = 'ALT',
+  action = act.ActivatePaneDirection 'Right',
+})
+
+table.insert(keys, {
+  key = 'E',
+  mods = 'SHIFT|CTRL',
+  action = act.ShowLauncher,
+})
+table.insert(keys, {
+  key = 'B',
+  mods = 'SHIFT|CTRL',
+  action = act.SplitPane {
+    command = { args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'broot' } },
+    direction = 'Left',
+    size = { Cells = 36 },
+  },
+})
 
 if wezterm.hostname() == 'venus.local' then
   table.insert(keys, { key = '§', action = act.SendKey { key = '`' } })

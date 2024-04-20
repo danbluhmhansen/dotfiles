@@ -20,10 +20,12 @@ if ((which zellij | length) != 0) {
     source ~/.config/nushell/scripts/completions/zellij.nu
 }
 
+source ~/.config/nushell/scripts/broot.nu
 use ~/.config/nushell/scripts/task.nu
 source ~/.config/nushell/scripts/sockets.nu
 source ~/.config/nushell/scripts/cargo_search.nu
 source ~/.config/nushell/scripts/dict.nu
+use ~/.config/nushell/scripts/wz.nu
 
 source ~/.config/nushell/scripts/fuzzy-pass.nu
 source ~/.config/nushell/scripts/fuzzy-pwr.nu

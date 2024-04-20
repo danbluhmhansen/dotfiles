@@ -14,6 +14,9 @@ paru = "~/.config/paru"
 homebrew = "~/.config/homebrew"
 "mac/LaunchAgents" = "~/Library/LaunchAgents"
 
+[broot.files]
+broot = "~/.config/broot"
+
 [bash.files]
 bashrc = "~/.bashrc"
 

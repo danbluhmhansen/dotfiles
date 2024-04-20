@@ -11,7 +11,7 @@ let hx = {
     languages: ($env.XDG_CONFIG_HOME | path join "helix/languages.toml")
 }
 
-def prompt_path [] {
+def create_left_prompt [] {
     let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
         '' => '~'
@@ -25,51 +25,14 @@ def prompt_path [] {
     $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
 }
 
-def prompt_git [] {
-    if (which gstat | is-empty) {
-        return ""
-    }
-
-    let gstat = gstat
-    let branch = if $gstat.branch != "no_branch" { $" (ansi magenta)($gstat.branch)" }
-
-    let untracked = if $gstat.wt_untracked > 0 { "?" }
-    let modified = if $gstat.wt_modified > 0 { "!" }
-    let deleted = if $gstat.wt_deleted > 0 { "✘" }
-    let stash = if $gstat.stashes > 0 { "$" }
-    let staged = if $gstat.idx_added_staged > 0 or $gstat.idx_modified_staged > 0 or $gstat.idx_deleted_staged > 0 { "+" }
-    let renamed = if $gstat.idx_renamed > 0 { "»" }
-    let ahead = if $gstat.ahead > 0 { "⇡" }
-    let behind = if $gstat.behind > 0 { "⇣" }
-    let conflicts = if $gstat.conflicts > 0 { "=" }
-
-    let stat_symbols = [$untracked, $modified, $deleted, $stash, $staged, $renamed, $ahead, $behind, $conflicts] | str join
-    let git_status = if $stat_symbols != "" { $" (ansi rb)($stat_symbols)" }
-
-    [$branch, $git_status] | str join
-}
-
-def create_left_prompt [] {
-    [(prompt_path), (prompt_git)] | str join
-}
-
 def create_right_prompt [] {
-    # create a right prompt in magenta with green separators and am/pm underlined
-    let time_segment = ([
-        (ansi reset)
-        (ansi magenta)
-        (date now | format date '%F %T') # try to respect user's locale
-    ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
-        str replace --regex --all "([/-])" $"(ansi green)${1}(ansi magenta)" |
-        str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
-
-    let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
+        let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
         (ansi rb)
         ($env.LAST_EXIT_CODE)
     ] | str join)
     } else { "" }
 
-    ([$last_exit_code, (char space), $time_segment] | str join)
+    $last_exit_code
 }
 
 # Use nushell functions to define your right and left prompt

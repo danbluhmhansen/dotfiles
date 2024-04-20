@@ -29,6 +29,7 @@ source ~/.config/nushell/scripts/fuzzy-pass.nu
 source ~/.config/nushell/scripts/fuzzy-pwr.nu
 
 use ~/.config/nushell/scripts/theme.nu
+use ~/.config/nushell/scripts/gstat.nu
 
 $env.config = {
     show_banner: false

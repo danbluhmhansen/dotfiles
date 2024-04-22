@@ -48,7 +48,7 @@ wezterm.on('update-right-status', function(window, pane)
   -- shell is using OSC 7 on the remote host.
   local cwd_uri = pane:get_current_working_dir()
   if cwd_uri then
-    local cwd = cwd_uri.file_path
+    local cwd = wezterm.target_triple == 'x86_64-pc-windows-msvc' and cwd_uri.file_path:sub(2) or cwd_uri.file_path
     local hostname = cwd_uri.host or wezterm.hostname()
 
     -- Remove the domain name portion of the hostname
@@ -60,7 +60,7 @@ wezterm.on('update-right-status', function(window, pane)
       hostname = wezterm.hostname()
     end
 
-    local home = cwd:gsub(wezterm.home_dir, "~")
+    local home = cwd:gsub(wezterm.home_dir:gsub('\\', '/'), '~')
 
     local success, stdout, stderr = wezterm.run_child_process {
       os.getenv('WEZTERM_DEFAULT_PROG'),

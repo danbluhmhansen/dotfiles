@@ -1,5 +1,6 @@
 includes = []
 packages = [
+  "broot",
   "gitui",
   "gpg",
   "helix",
@@ -8,6 +9,7 @@ packages = [
 ]
 
 [files]
+broot = "~/AppData/Roaming/dystroy/broot/config"
 gitui = "~/AppData/Roaming/gitui"
 gnupg = "~/scoop/persist/gpg/home"
 helix = "~/AppData/Roaming/helix"

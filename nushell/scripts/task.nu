@@ -344,11 +344,10 @@ export def log [
       let args = if $last != null {
         ["--lines" $last]
       } else {
-        []
+        ["--full"]
       }
 
-      process_raw (pueue log --full --json ...$args ...$ids)
-      | first
+      process_raw (pueue log --json ...$args ...$ids) | first
     }
   } else {
     if $tail {

@@ -125,7 +125,7 @@ config.window_close_confirmation = 'NeverPrompt'
 
 if wezterm.hostname() == 'jupiter.local' then
   config.window_padding = {
-    left = 6,
+    left = 8,
     right = 0,
     top = 0,
     bottom = 0,
@@ -134,28 +134,37 @@ end
 
 config.launch_menu = {
   {
-    label = 'bottom',
-    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'btm' }
-  },
-  {
-    label = 'toggle dark mode',
-    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'dark-mode' }
+    label = 'broot',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'broot' },
+    cwd = "~",
   },
   {
     label = 'gitui',
-    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'gitui' }
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'gitui' },
+  },
+  {
+    label = 'bottom',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'btm' },
+    cwd = "~",
   },
   {
     label = 'pass copy',
-    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'prs copy' }
-  },
-  {
-    label = 'yazi',
-    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'yazi' }
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'prs copy' },
+    cwd = "~",
   },
   {
     label = 'topgrade',
-    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'topgrade' }
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'topgrade' },
+    cwd = "~",
+  },
+  {
+    label = 'yazi',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'yazi' },
+  },
+  {
+    label = 'toggle dark mode',
+    args = { os.getenv('WEZTERM_DEFAULT_PROG'), '--login', '--commands', 'dark-mode' },
+    cwd = "~",
   },
 }
 

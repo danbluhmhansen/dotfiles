@@ -21,5 +21,8 @@ export def open [file: string] {
   if ((list | where pane_id == $pane).0 | get title) == 'hx' {
     wezterm cli send-text --pane-id $pane --no-paste $':open ($file)(char crlf)'
     wezterm cli activate-pane-direction right
+  } else {
+    wezterm cli send-text --pane-id $pane --no-paste $'hx ($file)(char crlf)'
+    wezterm cli activate-pane-direction right
   }
 }

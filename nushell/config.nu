@@ -1,30 +1,18 @@
-if ((which bat | length) != 0) {
-    source ~/.config/nushell/scripts/completions/bat.nu
-}
-if ((which btm | length) != 0) {
-    source ~/.config/nushell/scripts/completions/btm.nu
-}
-if ((which cargo| length) != 0) {
-    source ~/.config/nushell/scripts/completions/cargo.nu
-}
-if ((which rg | length) != 0) {
-    source ~/.config/nushell/scripts/completions/rg.nu
-}
-if ((which rustup | length) != 0) {
-    source ~/.config/nushell/scripts/completions/rustup.nu
-}
-if ((which scoop | length) != 0) {
-    source ~/.config/nushell/scripts/completions/scoop.nu
-}
-if ((which zellij | length) != 0) {
-    source ~/.config/nushell/scripts/completions/zellij.nu
-}
+source ~/.config/nushell/scripts/completions/bat.nu
+source ~/.config/nushell/scripts/completions/btm.nu
+source ~/.config/nushell/scripts/completions/cargo.nu
+source ~/.config/nushell/scripts/completions/rg.nu
+source ~/.config/nushell/scripts/completions/rustup.nu
+source ~/.config/nushell/scripts/completions/scoop.nu
 
+source ~/.config/nushell/scripts/bartib.nu
 source ~/.config/nushell/scripts/broot.nu
-use ~/.config/nushell/scripts/task.nu
-source ~/.config/nushell/scripts/sockets.nu
 source ~/.config/nushell/scripts/cargo_search.nu
 source ~/.config/nushell/scripts/dict.nu
+source ~/.config/nushell/scripts/date.nu
+source ~/.config/nushell/scripts/sockets.nu
+
+use ~/.config/nushell/scripts/task.nu
 use ~/.config/nushell/scripts/wz.nu
 
 source ~/.config/nushell/scripts/fuzzy-pass.nu

@@ -10,21 +10,34 @@ def --env "bartib current" [] {
 }
 
 # List recent activities
-def --env "bartib list" [
-  --current_week        # Show activities of the current week
-  --last_week           # Show activities of the last week
-  --today               # Show activities of the current day
-  --yesterday           # Show yesterdays' activities
-  --date(-d) :string    # Show activities of a certain date only
-  --from :string        # Begin of date range (inclusive)
-  --round :string       # Rounds the start and end time to the nearest duration. Durations can be in minutes or hours. E.g. 15m or 4h
-  --to :string          # End of date range (inclusive)
-] {
+def --env "bartib list" [] {
   open $env.BARTIB_FILE | lines |
     parse --regex '(?<start>\d{4}-\d{2}-\d{2} \d{2}:\d{2}) - (?<end>\d{4}-\d{2}-\d{2} \d{2}:\d{2}) \| (?<project>[^|]+) \| (?<description>.+)' |
     update start {|row| $row.start | into datetime } |
     update end {|row| $row.end | into datetime } |
     append (bartib current | reject duration)
+}
+
+# List all projects
+def "bartib projects" [
+  --current(-c) # Prints currently running projects only
+] {
+  if $current {
+    ^bartib projects --current | lines | each {|l| $l | str trim --char '"' }
+  } else {
+    ^bartib projects | lines | each {|l| $l | str trim --char '"' }
+  }
+}
+
+# Reports duration of tracked activities
+def --env "bartib report" [
+  date :datetime
+  --project(-p) :string # Do list activities for this project only
+] {
+  bartib list |
+    where {|e| ($e.start | format date %F) == ($date | format date %F)} |
+    insert duration {|e| ($e.end? | default (date now)) - $e.start } |
+    reject start end?
 }
 
 def "nu-complete bartib subcommands" [] {
@@ -98,7 +111,7 @@ export extern "bartib last" [
   --number(-n) :int # Maximum number of lines to display [default: 10]
 ] 
 
-# List recent activities
+# # List recent activities
 # export extern "bartib list" [
 #   --help(-h)            # Prints help information
 #   --current_week        # Show activities of the current week
@@ -114,25 +127,19 @@ export extern "bartib last" [
 #   --to :string          # End of date range (inclusive)
 # ] 
 
-# List all projects
-export extern "bartib projects" [
-  --help(-h)    # Prints help information
-  --current(-c) # Prints currently running projects only
-] 
-
-# Reports duration of tracked activities
-export extern "bartib report" [
-  --help(-h) # Prints help information
-  --current_week        # Show activities of the current week
-  --last_week           # Show activities of the last week
-  --today               # Show activities of the current day
-  --yesterday           # Show yesterdays' activities
-  --date(-d) :string    # Show activities of a certain date only
-  --from :string        # Begin of date range (inclusive)
-  --project(-p) :string # Do list activities for this project only
-  --round :string       # Rounds the start and end time to the nearest duration. Durations can be in minutes or hours. E.g. 15m or 4h
-  --to :string          # End of date range (inclusive)
-] 
+# # Reports duration of tracked activities
+# export extern "bartib report" [
+#   --help(-h) # Prints help information
+#   --current_week        # Show activities of the current week
+#   --last_week           # Show activities of the last week
+#   --today               # Show activities of the current day
+#   --yesterday           # Show yesterdays' activities
+#   --date(-d) :string    # Show activities of a certain date only
+#   --from :string        # Begin of date range (inclusive)
+#   --project(-p) :string # Do list activities for this project only
+#   --round :string       # Rounds the start and end time to the nearest duration. Durations can be in minutes or hours. E.g. 15m or 4h
+#   --to :string          # End of date range (inclusive)
+# ] 
 
 # Checks sanity of bartib log
 export extern "bartib sanity" [

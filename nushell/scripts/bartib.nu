@@ -1,21 +1,27 @@
 # Lists all currently running activities
 def --env "bartib current" [] {
-  mut current = open $env.BARTIB_FILE | lines | last |
-    parse --regex '(?<start>\d{4}-\d{2}-\d{2} \d{2}:\d{2}) \| (?<project>[^|]+) \| (?<description>.+)' |
-    update start {|row| $row.start | into datetime } | first
-
+  let line = open $env.BARTIB_FILE | lines | last
+    | parse --regex '(?<start>^\d{4}-\d{2}-\d{2} \d{2}:\d{2}) \| (?<project>[^|]+) \| (?<description>.+)'
+    
+  if ($line | is-empty) {
+    # TODO: Print 'No Activity is currently running'
+    return {}
+  }
+    
+  mut current = $line | update start {|row| $row.start | into datetime } | first
   $current.duration = (date now) - $current.start
-
   $current
 }
 
 # List recent activities
 def --env "bartib list" [] {
-  open $env.BARTIB_FILE | lines |
-    parse --regex '(?<start>\d{4}-\d{2}-\d{2} \d{2}:\d{2}) - (?<end>\d{4}-\d{2}-\d{2} \d{2}:\d{2}) \| (?<project>[^|]+) \| (?<description>.+)' |
-    update start {|row| $row.start | into datetime } |
-    update end {|row| $row.end | into datetime } |
-    append (bartib current | reject duration)
+  let current = bartib current
+  open $env.BARTIB_FILE | lines
+    | parse --regex '(?<start>\d{4}-\d{2}-\d{2} \d{2}:\d{2}) - (?<end>\d{4}-\d{2}-\d{2} \d{2}:\d{2}) \| (?<project>[^|]+) \| (?<description>.+)'
+    | update start {|row| $row.start | into datetime }
+    | update end {|row| $row.end | into datetime }
+    | append (bartib current | reject duration?)
+    | where start? != null
 }
 
 # List all projects
@@ -34,10 +40,24 @@ def --env "bartib report" [
   date :datetime
   --project(-p) :string # Do list activities for this project only
 ] {
-  bartib list |
-    where {|e| ($e.start | format date %F) == ($date | format date %F)} |
-    insert duration {|e| ($e.end? | default (date now)) - $e.start } |
-    reject start end?
+  bartib list
+    | where {|e| ($e.start | format date %F) == ($date | format date %F)}
+    | insert duration {|e| ($e.end? | default (date now)) - $e.start }
+    | select project description duration
+    | group-by --to-table project
+    | each {|e|
+        if ($e | is-empty) { return }
+        {
+          project: $e.group
+          items: (
+            $e.items
+            | group-by --to-table description
+            | each {|d| { description: $d.group duration: ($d.items | get duration | math sum) } }
+          )
+        }
+      }
+    | flatten
+    | flatten
 }
 
 def "nu-complete bartib subcommands" [] {

@@ -47,8 +47,9 @@ def --env "bartib report" [
   --round(-r)   :string # Rounds the start and end time to the nearest duration. Durations can be in minutes or hours. E.g. 15m or 4h
 ] {
   let now = (date now)
+  let end = if ($range | is-empty) { ($date | format date %F | into datetime) + 1day } else { $range }
   bartib list
-    | where {|e| (date between $e.start $date (if ($range | is-empty) {$now} else {$range})) and (($project | is-empty) or ($e.project == $project))}
+    | where {|e| (date between $e.start $date $end) and (($project | is-empty) or ($e.project == $project))}
     | insert duration {|e| ($e.end? | default $now) - $e.start }
     | select project description duration
     | group-by --to-table project
